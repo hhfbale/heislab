@@ -15,14 +15,18 @@ void setState(STATE s){
 
 void FiniteStateMachine(void){
 
-    setEndDest();
+    updateEndDest(); 
 
+   
     while(1){
         updateQueue();
+        indicateFloor();
 
-        if(getCurrentFloor() != -1){
-            elevio_floorIndicator(getCurrentFloor());
+        if(getStop() && getObstructed()){
+            flushQueue();
+            break;
         }
+
 
         switch (getState()){
             case STAT:
@@ -35,6 +39,13 @@ void FiniteStateMachine(void){
                     break;
                 }
                 if(getEndDest() == 4){
+                    updateEndDest();
+                    break;
+                }
+                if(getEndDest() == getCurrentFloor()){
+                    updateEndDest();
+                    updateQueue();
+                    embark();
                     break;
                 }
                 if(getEndDest() < getCurrentFloor()){
@@ -50,16 +61,13 @@ void FiniteStateMachine(void){
                 break;
 
             case OPEN:
-                if(getTimerFinished()){
-                    closeDoor();
-                    setState(STAT);
-                    break;
-                }
+                timer();
                 if(getObstructed() || getStop()){
-                    timer();
-                    setState(OPEN);
                     break;
                 }
+                closeDoor();
+                setState(STAT);
+                
                 break;
 
             case DOWN:
@@ -90,5 +98,11 @@ void FiniteStateMachine(void){
                 setState(STAT);
                 break;
         }
+        
+        
+        
+        nanosleep(&(struct timespec){0, 20*1000*1000}, NULL);
+
     }
+
 }

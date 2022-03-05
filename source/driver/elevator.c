@@ -21,30 +21,30 @@ int getObstructed(void){
     return elevio_obstruction();
 }
 
+void indicateFloor(void){
+    if(getCurrentFloor() != -1){
+        elevio_floorIndicator(getCurrentFloor());
+    }
+}
+
 //testet
 void initElevator(void){
-
-    for(int b=0;b<N_BUTTONS;b++){
-        for(int f=0;f<N_FLOORS;f++){
-            elevio_buttonLamp(f,b,0);
-        }
-    }
-    g_doorOpen = 0;
+    closeDoor();
     elevio_motorDirection(DIRN_DOWN);
     while(getCurrentFloor() == -1){
         continue;
     }
     elevio_motorDirection(DIRN_STOP);
+    setState(STAT);
 }
 
 //testet
 void embark(void){
     elevio_motorDirection(DIRN_STOP);
     setState(STAT);
-    elevio_doorOpenLamp(1);
+
     g_doorOpen = 1;
-    timer();
-    closeDoor();
+    elevio_doorOpenLamp(1);
 }
 
 

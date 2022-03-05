@@ -1,12 +1,6 @@
 #pragma once
 #include <time.h>
 
-static int g_timerFinished = 0;
-
-int getTimerFinished(void);
-
+void startCounter(void);
+int stopCounter(void);
 void timer(void);
-
-
-
-

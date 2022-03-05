@@ -2,18 +2,18 @@
 #include "FSM.h"
 #include "elevator.h"
 
-int getEndDest(void){
-    return g_endDest;
-}
 
 //testet
 void initQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
             *(*(g_queue+b)+f)=0;
+            elevio_buttonLamp(f,b,0);
         }
     }
+    setEndDest(4);
 }
+
 //testet
 void printQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
@@ -75,14 +75,15 @@ void updateQueue(void){
 }
 
 
-
 void checkFloorUP(void){          
     if(*(*(g_queue+BUTTON_HALL_UP)+getCurrentFloor())==1){
         embark();
     } 
-    if(getEndDest() == getCurrentFloor()){
-        setEndDest();
+    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
         embark();
+    } 
+    if(getEndDest() == getCurrentFloor()){
+        setState(STAT);
     }   
 }
 
@@ -90,15 +91,20 @@ void checkFloorDOWN(void){
     if(*(*(g_queue+BUTTON_HALL_DOWN)+getCurrentFloor())==1){
         embark();
     }
-    if(getEndDest() == getCurrentFloor()){
-        setEndDest();
+    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
         embark();
+    } 
+    if(getEndDest() == getCurrentFloor()){
+        setState(STAT);
     } 
 }
 
+int getEndDest(void){
+    return g_endDest;
+}
 
 //testet
-void setEndDest(void){
+void updateEndDest(void){
     const int prioOne = 2;
     const int prioTwo = 1;
     const int prioThree = 0;
@@ -121,4 +127,8 @@ void setEndDest(void){
             }
         }
     }
+}
+
+void setEndDest(int f){
+    g_endDest = f;
 }

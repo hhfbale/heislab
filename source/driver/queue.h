@@ -1,11 +1,11 @@
 #pragma once
 
-//#include "elevator.h"
+#include "elevator.h"
 #include "elevio.h"
 
 static int g_queue[N_BUTTONS][N_FLOORS];
 
-static int g_endDest = 5;
+static int g_endDest;
 int getEndDest(void);
 
 void initQueue(void);
@@ -19,4 +19,5 @@ int checkFlush(void);
 void updateQueue(void);
 void checkFloorUP(void);
 void checkFloorDOWN(void);
-void setEndDest(void);
+void updateEndDest(void);
+void setEndDest(int f);

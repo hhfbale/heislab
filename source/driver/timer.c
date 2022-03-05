@@ -1,24 +1,35 @@
 #include "timer.h"
+#include "queue.h"
+#include "elevator.h"
+#include <stdio.h>
 
 
+static int startTime = -1;
+
+
+void startCounter(void){
+    startTime = time(NULL);
+}
+
+int stopCounter(void){
+    int stopTime = 3;
+    int timeFinished = ((time(NULL) - startTime) > stopTime);
+    if(startTime == -1){
+        return 0;
+    }
+    else{return timeFinished;}
+}
 
 void timer(void){
 
-    time_t start, end;
-    double elapsed;
-
-    time(&start);
+    startCounter();
+    indicateFloor();
     do{
-        time(&end);
-        elapsed = difftime(end, start);
+        updateQueue();
+        if(getStop()){
+            stopper();
+        }
 
-    } while(elapsed < 3.5);
-    g_timerFinished = 1;
-    //printf("%f", elapsed);
+    } while(stopCounter() == 0);
 
-}
-
-
-int getTimerFinished(void){
-    return g_timerFinished;
 }
