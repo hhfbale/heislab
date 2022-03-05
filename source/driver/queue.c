@@ -1,6 +1,7 @@
 #include "queue.h"
 #include "FSM.h"
 #include "elevator.h"
+#include "tid.h"
 
 
 //testet
@@ -68,9 +69,9 @@ void removeFromQueue(int b){
 void updateQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
-            addToQueue(b,f);                    
-            removeFromQueue(b);  
+            addToQueue(b,f);                     
         }
+        removeFromQueue(b); 
     }                 
 }
 
@@ -78,25 +79,32 @@ void updateQueue(void){
 void checkFloorUP(void){          
     if(*(*(g_queue+BUTTON_HALL_UP)+getCurrentFloor())==1){
         embark();
-    } 
-    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
-        embark();
-    } 
+    }
+    
     if(getEndDest() == getCurrentFloor()){
         setState(STAT);
-    }   
+        //updateEndDest();
+    }
+    
+      
+    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
+        embark();
+    }  
 }
 
 void checkFloorDOWN(void){
     if(*(*(g_queue+BUTTON_HALL_DOWN)+getCurrentFloor())==1){
         embark();
     }
-    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
-        embark();
-    } 
+    
     if(getEndDest() == getCurrentFloor()){
         setState(STAT);
-    } 
+    }
+    
+    if(*(*(g_queue+BUTTON_CAB)+getCurrentFloor())==1){
+        embark();
+    }
+    
 }
 
 int getEndDest(void){
@@ -111,7 +119,7 @@ void updateEndDest(void){
     
     int flushed = checkFlush();
     if(flushed == 1){
-        g_endDest = 4;
+        setEndDest(4);
     }
     else{
         for(int f=0;f<N_FLOORS;f++){

@@ -1,4 +1,4 @@
-#include "timer.h"
+#include "tid.h"
 #include "queue.h"
 #include "elevator.h"
 #include <stdio.h>
@@ -21,9 +21,8 @@ int stopCounter(void){
 }
 
 void timer(void){
-
-    startCounter();
     indicateFloor();
+    startCounter();
     do{
         updateQueue();
         if(getStop()){
@@ -31,5 +30,4 @@ void timer(void){
         }
 
     } while(stopCounter() == 0);
-
 }

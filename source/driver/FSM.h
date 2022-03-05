@@ -7,9 +7,19 @@ typedef enum{
     UP      = 3
 } STATE;
 
+
+
+
+
+static STATE lastMovingDir;
+STATE getLastMovingDir(void);
+void setLastMovingDir(STATE s);
+
 static STATE g_state = STAT;
 STATE getState(void);
 void setState(STATE s);
+
+
 
 
 void FiniteStateMachine(void);

@@ -1,7 +1,7 @@
 #include "FSM.h"
 #include "elevator.h"
 #include "elevio.h"
-#include "timer.h"
+#include "tid.h"
 #include "queue.h"
 
 STATE getState(void){
@@ -12,15 +12,24 @@ void setState(STATE s){
     g_state = s;
 }
 
+STATE getLastMovingDir(void){
+    return lastMovingDir;
+}
+void setLastMovingDir(STATE s){
+    lastMovingDir = s;
+}
+
 
 void FiniteStateMachine(void){
 
     updateEndDest(); 
-
+    
    
     while(1){
         updateQueue();
         indicateFloor();
+        setLastFloor();
+
 
         if(getStop() && getObstructed()){
             flushQueue();
@@ -30,6 +39,7 @@ void FiniteStateMachine(void){
 
         switch (getState()){
             case STAT:
+
                 if(getStop()){
                     stopper();
                     break;
@@ -38,26 +48,36 @@ void FiniteStateMachine(void){
                     setState(OPEN);
                     break;
                 }
+
+                if(getEndDest() != 4 && getEmergency()){
+                    initElevator();
+                    setEmergency(0);
+                    break;
+                }
+
+                if(getEndDest() == getCurrentFloor()){
+                    updateEndDest();
+                    embark();
+                    break;
+                }
+
                 if(getEndDest() == 4){
                     updateEndDest();
                     break;
                 }
-                if(getEndDest() == getCurrentFloor()){
-                    updateEndDest();
-                    updateQueue();
-                    embark();
-                    break;
-                }
+                
                 if(getEndDest() < getCurrentFloor()){
                     elevio_motorDirection(DIRN_DOWN);
                     setState(DOWN);
                     break;
                 }
+
                 if(getEndDest() > getCurrentFloor()){
                     elevio_motorDirection(DIRN_UP);
                     setState(UP);
                     break;
                 }
+
                 break;
 
             case OPEN:
@@ -65,15 +85,19 @@ void FiniteStateMachine(void){
                 if(getObstructed() || getStop()){
                     break;
                 }
-                closeDoor();
+                if(getEndDest() == getCurrentFloor()){
+                    updateEndDest();
+                }
+                setDoor(0);
                 setState(STAT);
-                
                 break;
 
             case DOWN:
+                setLastMovingDir(DOWN);
                 if(getStop()){
                     setState(STAT);
                     stopper();
+                    setEmergency(1);
                     break;
                 }
                 if(getCurrentFloor() != -1){
@@ -83,9 +107,11 @@ void FiniteStateMachine(void){
                 break;
 
             case UP:
+                setLastMovingDir(UP);
                 if(getStop()){
                     setState(STAT);
                     stopper();
+                    setEmergency(1);
                     break;
                 }
                 if(getCurrentFloor() != -1){
@@ -97,12 +123,7 @@ void FiniteStateMachine(void){
             default:
                 setState(STAT);
                 break;
-        }
-        
-        
-        
+        }        
         nanosleep(&(struct timespec){0, 20*1000*1000}, NULL);
-
     }
-
 }

@@ -1,9 +1,26 @@
 #include "elevator.h"
 #include "elevio.h"
 #include <stdlib.h>
-#include "timer.h"
+#include "tid.h"
 #include "FSM.h"
 
+int getEmergency(void){
+    return emergency;
+}
+void setEmergency(int e){
+    emergency = e;
+}
+
+
+int getLastFloor(void){
+    return g_lastFloor;
+}
+
+void setLastFloor(void){
+    if(getCurrentFloor()!= -1){
+        g_lastFloor = getCurrentFloor();
+    } 
+}
 
 int getCurrentFloor(void){
     return elevio_floorSensor();
@@ -28,8 +45,14 @@ void indicateFloor(void){
 }
 
 //testet
+void setDoor(int value){
+    elevio_doorOpenLamp(value);
+    g_doorOpen = value;
+}
+
+//testet
 void initElevator(void){
-    closeDoor();
+    setDoor(0);
     elevio_motorDirection(DIRN_DOWN);
     while(getCurrentFloor() == -1){
         continue;
@@ -42,17 +65,11 @@ void initElevator(void){
 void embark(void){
     elevio_motorDirection(DIRN_STOP);
     setState(STAT);
-
-    g_doorOpen = 1;
-    elevio_doorOpenLamp(1);
+    setDoor(1);
 }
 
 
-//testet
-void closeDoor(void){
-    elevio_doorOpenLamp(0);
-    g_doorOpen = 0;
-}
+
 
 
 //testet
@@ -61,7 +78,11 @@ void stopper(void){
     flushQueue();
     while(getStop()){
         elevio_stopLamp(1);
+        if(getCurrentFloor()!=-1){
+            setDoor(1);
+        }
     }
     elevio_stopLamp(0);
+
 }
 
