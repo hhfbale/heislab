@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Mar  4 17:02:31 2022
+# Make data base, printed on Mon Mar  7 20:03:07 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/student/Documents/Herdis/Lab 1 - Heis/skeleton_project
+CURDIR := /home/student/Documents/ST40/heislab
 # makefile
 SHELL = /bin/sh
 # environment
@@ -51,7 +51,7 @@ SNAP_DATA = /var/snap/code/89
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:43710
+JOURNAL_STREAM = 8:55662
 # makefile (from 'Makefile', line 5)
 CFLAGS = -Wall -g -std=gnu11 -fsanitize=address
 # environment
@@ -69,7 +69,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.deskto
 # environment
 USERNAME = student
 # makefile (from 'Makefile', line 13)
-SOURCES :=  driver/elevio.c  main.c
+SOURCES :=  driver/tid.c  driver/elevator.c  driver/elevio.c  driver/FSM.c  driver/queue.c  main.c
 # environment
 MAKELEVEL := 0
 # environment
@@ -83,7 +83,7 @@ _ = /snap/code/89/usr/share/code/code
 # 'override' directive
 .SHELLSTATUS := 0
 # environment
-MANAGERPID = 1617
+MANAGERPID = 1609
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -99,7 +99,7 @@ PATH = /home/student/.local/bin:/home/student/.cargo/bin:/home/student/.local/bi
 # environment
 GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/drift-OptiPlex-7070:@/tmp/.ICE-unix/2225,unix/drift-OptiPlex-7070:/tmp/.ICE-unix/2225
+SESSION_MANAGER = local/drift-OptiPlex-7070:@/tmp/.ICE-unix/2218,unix/drift-OptiPlex-7070:/tmp/.ICE-unix/2218
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
@@ -117,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e093ddcfd6494745bd629edada2568ed
+INVOCATION_ID = 16c125844a80438faab167c559445efb
 # makefile (from 'Makefile', line 6)
 LDFLAGS = -fsanitize=address
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3151
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3822
 # automatic
 %F = $(notdir $%)
 # environment
@@ -141,11 +141,11 @@ VSCODE_PIPE_LOGGING = true
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/student/Documents/Herdis/Lab 1 - Heis/skeleton_project
+PWD = /home/student/Documents/ST40/heislab
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2182
+SSH_AGENT_PID = 2175
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -197,7 +197,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-18af055c-ac20-452b-a6f4-c982fff96bcf.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-41360101-03e5-4cbd-81e0-b7d32251510a.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -291,9 +291,9 @@ LANG = C
 # makefile (from 'Makefile', line 10)
 SOURCEDIR = source
 # environment
-VSCODE_PID = 3220
+VSCODE_PID = 3869
 # variable set hash-table stats:
-# Load=141/1024=14%, Rehash=0, Collisions=24/186=13%
+# Load=141/1024=14%, Rehash=0, Collisions=24/180=13%
 
 # Pattern-specific Variable Values
 
@@ -301,12 +301,12 @@ VSCODE_PID = 3220
 
 # Directories
 
-# source (device 66308, inode 14816609): No files, no impossibilities so far.
-# source/driver (device 66308, inode 15076214): 3 files, no impossibilities so far.
-# . (device 66308, inode 14816537): 7 files, no impossibilities.
-
+# source (device 66308, inode 4325928): 3 files, no impossibilities so far.
+# source/driver (device 66308, inode 4325929): 10 files, no impossibilities so far.
  
-# 10 files, no impossibilities in 3 directories.
+# . (device 66308, inode 4197050): 11 files, no impossibilities.
+
+# 24 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -320,11 +320,23 @@ build/%.o: source/%.c
 
 # Files
 
+build/main.o: source/main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@mkdir -p $(@D)
+	$(COMPILER) -o $@ -c $(CFLAGS) $<
+	
+
 # Not a target:
-build/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+source/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
 
 all: elevator
 #  Phony target (prerequisite of .PHONY).
@@ -332,46 +344,44 @@ all: elevator
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 .PHONY: all rebuild clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+build/driver/queue.o: source/driver/queue.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'driver/queue'
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@mkdir -p $(@D)
+	$(COMPILER) -o $@ -c $(CFLAGS) $<
+	
+
+# Not a target:
+source/driver/queue.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-28 12:05:12
+#  Last modified 2022-03-07 20:02:29.324666854
 #  File has been updated.
 #  Successfully updated.
 
 build/driver/elevio.o: source/driver/elevio.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'driver/elevio'
-#  File does not exist.
+#  Last modified 2022-03-07 20:02:29.324666854
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := build/driver/elevio.o
-# automatic
-# % := 
-# automatic
-# * := driver/elevio
-# automatic
-# + := source/driver/elevio.c
-# automatic
-# | := 
-# automatic
-# < := source/driver/elevio.c
-# automatic
-# ^ := source/driver/elevio.c
-# automatic
-# ? := source/driver/elevio.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 30):
 	@mkdir -p $(@D)
 	$(COMPILER) -o $@ -c $(CFLAGS) $<
@@ -380,7 +390,7 @@ build/driver/elevio.o: source/driver/elevio.c
 # Not a target:
 source/driver/elevio.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-01 16:25:54
+#  Last modified 2022-03-07 20:02:29.324666854
 #  File has been updated.
 #  Successfully updated.
 
@@ -392,11 +402,65 @@ rebuild: clean all
 #  recipe to execute (from 'Makefile', line 19):
 	
 
+build/driver/elevator.o: source/driver/elevator.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'driver/elevator'
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@mkdir -p $(@D)
+	$(COMPILER) -o $@ -c $(CFLAGS) $<
+	
+
+# Not a target:
+source/driver/elevator.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+
+build/driver/tid.o: source/driver/tid.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'driver/tid'
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@mkdir -p $(@D)
+	$(COMPILER) -o $@ -c $(CFLAGS) $<
+	
+
+# Not a target:
+source/driver/tid.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+build/driver/FSM.o: source/driver/FSM.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'driver/FSM'
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
+	@mkdir -p $(@D)
+	$(COMPILER) -o $@ -c $(CFLAGS) $<
+	
+
+# Not a target:
+source/driver/FSM.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-07 20:02:29.324666854
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -407,30 +471,28 @@ clean:
 	rm -f $(EXECUTABLE)
 	rm -rf $(OBJECTDIR)
 
-elevator: build/driver/elevio.o build/main.o
+elevator: build/driver/tid.o build/driver/elevator.o build/driver/elevio.o build/driver/FSM.o build/driver/queue.o build/main.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-03-07 20:02:29.328666874
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 26):
 	$(COMPILER) $^ -o $@ $(LDFLAGS)
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/35=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/63=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 273 B / avg = 10 B
-# current buf: size = 8162 B / used = 273 B / count = 25 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 596 B / avg = 11 B
+# current buf: size = 8162 B / used = 596 B / count = 50 / avg = 11 B
 
-# strcache performance: lookups = 44 / hit rate = 43%
+# strcache performance: lookups = 77 / hit rate = 35%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=2/44=5%
-# Finished Make data base on Fri Mar  4 17:02:31 2022
+# Load=50/8192=1%, Rehash=0, Collisions=3/77=4%
+# Finished Make data base on Mon Mar  7 20:03:07 2022
 
  

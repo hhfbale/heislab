@@ -1,9 +1,17 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/student/Documents/Herdis/Lab 1 - Heis/skeleton_project'
+make: Entering directory '/home/student/Documents/ST40/heislab'
+mkdir -p build/driver
+clang -o build/driver/tid.o -c -Wall -g -std=gnu11 -fsanitize=address source/driver/tid.c
+mkdir -p build/driver
+clang -o build/driver/elevator.o -c -Wall -g -std=gnu11 -fsanitize=address source/driver/elevator.c
 mkdir -p build/driver
 clang -o build/driver/elevio.o -c -Wall -g -std=gnu11 -fsanitize=address source/driver/elevio.c
+mkdir -p build/driver
+clang -o build/driver/FSM.o -c -Wall -g -std=gnu11 -fsanitize=address source/driver/FSM.c
+mkdir -p build/driver
+clang -o build/driver/queue.o -c -Wall -g -std=gnu11 -fsanitize=address source/driver/queue.c
 mkdir -p build
 clang -o build/main.o -c -Wall -g -std=gnu11 -fsanitize=address source/main.c
-clang build/driver/elevio.o build/main.o -o elevator -fsanitize=address
-make: Leaving directory '/home/student/Documents/Herdis/Lab 1 - Heis/skeleton_project'
+clang build/driver/tid.o build/driver/elevator.o build/driver/elevio.o build/driver/FSM.o build/driver/queue.o build/main.o -o elevator -fsanitize=address
+make: Leaving directory '/home/student/Documents/ST40/heislab'
  
