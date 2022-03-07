@@ -4,16 +4,16 @@
 #include <stdio.h>
 
 
-static int startTime = -1;
+static int m_startTime = -1;
 
 
 void startCounter(void){
-    startTime = time(NULL);
+    m_startTime = time(NULL);
 }
 
 int stopCounter(void){
-    int stopTime = 3;
-    int timeFinished = ((time(NULL) - startTime) > stopTime);
+    const int stopTime = 3;
+    int timeFinished = ((time(NULL) - m_startTime) > stopTime);
     if(startTime == -1){
         return 0;
     }
