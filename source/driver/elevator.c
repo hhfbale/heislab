@@ -7,8 +7,8 @@
 int getEmergency(void){
     return emergency;
 }
-void setEmergency(int e){
-    emergency = e;
+void setEmergency(int value){
+    emergency = value;
 }
 
 

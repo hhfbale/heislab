@@ -4,7 +4,6 @@
 #include "tid.h"
 
 
-//testet
 void initQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
@@ -15,7 +14,6 @@ void initQueue(void){
     setEndDest(4);
 }
 
-//testet
 void printQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
@@ -25,12 +23,10 @@ void printQueue(void){
     }
 }
 
-//testet
 void flushQueue(void){
     initQueue();
 }
 
-//testet
 int checkFlush(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
@@ -42,7 +38,6 @@ int checkFlush(void){
     return 1;
 }
 
-//testet
 void addToQueue(int b, int f){
     int addFloor=-1;
     int *p_addFloor=&addFloor;
@@ -55,7 +50,6 @@ void addToQueue(int b, int f){
                        
 }
 
-//testet, mangler å teste med input bra current floor, og state, og sette på lys
 void removeFromQueue(int b){
   
     if(getState() == OPEN){
@@ -65,7 +59,6 @@ void removeFromQueue(int b){
 }
 
 
-//testet
 void updateQueue(void){
     for(int b=0;b<N_BUTTONS;b++){
         for(int f=0;f<N_FLOORS;f++){
@@ -83,7 +76,6 @@ void checkFloorUP(void){
     
     if(getEndDest() == getCurrentFloor()){
         setState(STAT);
-        //updateEndDest();
     }
     
       
@@ -111,7 +103,6 @@ int getEndDest(void){
     return g_endDest;
 }
 
-//testet
 void updateEndDest(void){
     const int prioOne = 2;
     const int prioTwo = 1;
