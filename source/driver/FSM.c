@@ -50,10 +50,33 @@ void FiniteStateMachine(void){
                 }
 
                 if(getEndDest() != 4 && getEmergency()){
-                    initElevator();
-                    setEmergency(0);
+                    if(getLastFloor()<getEndDest()){
+                        setState(UP);
+                        break;
+                    }
+                    if(getLastFloor()>getEndDest()){
+                        setState(DOWN);
+                        break;
+                    }
+                    if(getLastFloor() == getEndDest()){
+                        switch(getLastMovingDir()){
+                            case UP:
+                                setState(DOWN);
+                                break;
+                            
+                            case DOWN:
+                                setState(UP);
+                                break;
+                            
+                            default:
+                                break;
+                        }
+                        break;
+                    }
                     break;
                 }
+
+
 
                 if(getEndDest() == getCurrentFloor()){
                     updateEndDest();
@@ -85,6 +108,7 @@ void FiniteStateMachine(void){
                 if(getObstructed() || getStop()){
                     break;
                 }
+
                 if(getEndDest() == getCurrentFloor()){
                     updateEndDest();
                 }
@@ -100,6 +124,11 @@ void FiniteStateMachine(void){
                     setEmergency(1);
                     break;
                 }
+                if(getEmergency()){
+                    emergencyHandler(DIRN_DOWN);
+                    break;
+                }
+
                 if(getCurrentFloor() != -1){
                     checkFloorDOWN();
                     break;
@@ -112,6 +141,10 @@ void FiniteStateMachine(void){
                     setState(STAT);
                     stopper();
                     setEmergency(1);
+                    break;
+                }
+                if(getEmergency()){
+                    emergencyHandler(DIRN_UP);
                     break;
                 }
                 if(getCurrentFloor() != -1){

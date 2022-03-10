@@ -100,3 +100,9 @@ void setDoor(int value);
  * 
  */
 void stopper(void);
+/**
+ * @brief Håndterer stopp mellom etasjer.
+ * 
+ * @param dirn Retning
+ */
+void emergencyHandler(MotorDirection dirn);

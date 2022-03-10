@@ -87,3 +87,14 @@ void stopper(void){
 
 }
 
+void emergencyHandler(MotorDirection dirn){
+    setEmergency(0);
+    elevio_motorDirection(dirn);
+    while(getCurrentFloor()!=getEndDest()){
+        continue;
+    }
+    elevio_motorDirection(DIRN_STOP);
+    setState(STAT);
+}
+
+
