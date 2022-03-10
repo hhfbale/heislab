@@ -6,10 +6,10 @@
 #include "queue.h"
 
 int getEmergency(void){
-    return emergency;
+    return g_emergency;
 }
 void setEmergency(int value){
-    emergency = value;
+    g_emergency = value;
 }
 
 

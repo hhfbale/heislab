@@ -11,7 +11,7 @@
  * @brief Variabel som forteller om det er foretatt et nødstopp.
  * 
  */
-static int emergency = 0;
+static int g_emergency = 0;
 /**
  * @brief Returnerer verdien til emergency-variablen.
  * 

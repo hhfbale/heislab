@@ -111,6 +111,7 @@ void FiniteStateMachine(void){
 
                 if(getEndDest() == getCurrentFloor()){
                     updateEndDest();
+                    break;
                 }
                 setDoor(0);
                 setState(STAT);
