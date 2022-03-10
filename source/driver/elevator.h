@@ -1,7 +1,7 @@
 /**
  * @file elevator.h
- * @author herman (hhbale@stud.ntnu.no)
- * @brief Utlevert kode, funksjoner som innhenter og sender informasjon til fysisk heis.
+ * @author hermano (hhbale@stud.ntnu.no)
+ * @brief Inneholder funksjoner som er direkte fysisk koblet til heisen.
  * @date 2022-03-06
  */
 #pragma once
@@ -85,7 +85,7 @@ void indicateFloor(void);
  */
 void initElevator(void);
 /**
- * @brief Simulerer en person som skal av eller på heisen ved en etasje - stanser heisen og får den i OPEN-tilstand.
+ * @brief Simulerer en person som skal av eller på heisen ved en etasje.
  * 
  */
 void embark(void);

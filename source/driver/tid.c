@@ -14,7 +14,7 @@ void startCounter(void){
 int stopCounter(void){
     const int stopTime = 3;
     int timeFinished = ((time(NULL) - m_startTime) > stopTime);
-    if(startTime == -1){
+    if(m_startTime == -1){
         return 0;
     }
     else{return timeFinished;}

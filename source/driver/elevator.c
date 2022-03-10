@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "tid.h"
 #include "FSM.h"
+#include "queue.h"
 
 int getEmergency(void){
     return emergency;

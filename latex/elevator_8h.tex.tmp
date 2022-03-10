@@ -1,0 +1,265 @@
+\hypertarget{elevator_8h}{}\doxysection{source/driver/elevator.h File Reference}
+\label{elevator_8h}\index{source/driver/elevator.h@{source/driver/elevator.h}}
+
+
+Inneholder funksjoner som er direkte fysisk koblet til heisen.  
+
+
+{\ttfamily \#include \char`\"{}elevio.\+h\char`\"{}}\newline
+Include dependency graph for elevator.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{elevator_8h_abd3a7177f8b9487cc9e7082d49e38e0e}{get\+Emergency}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer verdien til emergency-\/variablen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_a188056060b98f2a5e726045194c04507}{set\+Emergency}} (int value)
+\begin{DoxyCompactList}\small\item\em Setter verdien til emergency-\/variablen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{elevator_8h_adcb41b3430b7c5f338474a3bfab4ae5c}{get\+Last\+Floor}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer verdien til g\+\_\+last\+Floor-\/variablen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_a0122f48c41efd520e5e593fa6285e47f}{set\+Last\+Floor}} (void)
+\begin{DoxyCompactList}\small\item\em Setter verdien til g\+\_\+last\+Floor-\/variablen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{elevator_8h_a4df41a43322aabdf5884611504c87bd0}{get\+Door\+Open}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer verdien til g\+\_\+door\+Open-\/variablen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{elevator_8h_af19063495cc2898026051a14c741801e}{get\+Current\+Floor}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer etasjen heisen befinner seg i ved gitt tidspunkt. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{elevator_8h_afd214d67f8ccf52c173d1834128f110c}{get\+Obstructed}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer verdien til obstruksjonsbryteren. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{elevator_8h_a6679cbfe89e79b949816e4d500454ab8}{get\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer verdien til stoppknappen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_abba2bdafe9118f76ddee19913552e3ee}{indicate\+Floor}} (void)
+\begin{DoxyCompactList}\small\item\em Får etasjeindikatorerne til å lyse etter kravene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_a0d8b4ee0eab7280001d1216cf66921a2}{init\+Elevator}} (void)
+\begin{DoxyCompactList}\small\item\em Initialiserer heisen -\/ setter den i en definert etasje. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_a5f0cf6e45b11e96dc76c496a57400a9c}{embark}} (void)
+\begin{DoxyCompactList}\small\item\em Simulerer en person som skal av eller på heisen ved en etasje. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_aa975651043f82b7547802f7826ba8289}{set\+Door}} (int value)
+\begin{DoxyCompactList}\small\item\em Setter verdien til lyset som inikerer om døren er åpen eller lukket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elevator_8h_a5c257097a6c346b22d0afce600c4219e}{stopper}} (void)
+\begin{DoxyCompactList}\small\item\em Definerer hvordan heisen skal respondere ved et nødstopp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Inneholder funksjoner som er direkte fysisk koblet til heisen. 
+
+\begin{DoxyAuthor}{Author}
+hermano (\href{mailto:hhbale@stud.ntnu.no}{\texttt{ hhbale@stud.\+ntnu.\+no}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/03-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{elevator_8h_a5f0cf6e45b11e96dc76c496a57400a9c}\label{elevator_8h_a5f0cf6e45b11e96dc76c496a57400a9c}} 
+\index{elevator.h@{elevator.h}!embark@{embark}}
+\index{embark@{embark}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{embark()}{embark()}}
+{\footnotesize\ttfamily void embark (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Simulerer en person som skal av eller på heisen ved en etasje. 
+
+
+
+Definition at line 66 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_af19063495cc2898026051a14c741801e}\label{elevator_8h_af19063495cc2898026051a14c741801e}} 
+\index{elevator.h@{elevator.h}!getCurrentFloor@{getCurrentFloor}}
+\index{getCurrentFloor@{getCurrentFloor}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getCurrentFloor()}{getCurrentFloor()}}
+{\footnotesize\ttfamily int get\+Current\+Floor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer etasjen heisen befinner seg i ved gitt tidspunkt. 
+
+\begin{DoxyReturn}{Returns}
+Etasje 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a4df41a43322aabdf5884611504c87bd0}\label{elevator_8h_a4df41a43322aabdf5884611504c87bd0}} 
+\index{elevator.h@{elevator.h}!getDoorOpen@{getDoorOpen}}
+\index{getDoorOpen@{getDoorOpen}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getDoorOpen()}{getDoorOpen()}}
+{\footnotesize\ttfamily int get\+Door\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer verdien til g\+\_\+door\+Open-\/variablen. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_abd3a7177f8b9487cc9e7082d49e38e0e}\label{elevator_8h_abd3a7177f8b9487cc9e7082d49e38e0e}} 
+\index{elevator.h@{elevator.h}!getEmergency@{getEmergency}}
+\index{getEmergency@{getEmergency}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getEmergency()}{getEmergency()}}
+{\footnotesize\ttfamily int get\+Emergency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer verdien til emergency-\/variablen. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 8 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_adcb41b3430b7c5f338474a3bfab4ae5c}\label{elevator_8h_adcb41b3430b7c5f338474a3bfab4ae5c}} 
+\index{elevator.h@{elevator.h}!getLastFloor@{getLastFloor}}
+\index{getLastFloor@{getLastFloor}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getLastFloor()}{getLastFloor()}}
+{\footnotesize\ttfamily int get\+Last\+Floor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer verdien til g\+\_\+last\+Floor-\/variablen. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_afd214d67f8ccf52c173d1834128f110c}\label{elevator_8h_afd214d67f8ccf52c173d1834128f110c}} 
+\index{elevator.h@{elevator.h}!getObstructed@{getObstructed}}
+\index{getObstructed@{getObstructed}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getObstructed()}{getObstructed()}}
+{\footnotesize\ttfamily int get\+Obstructed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer verdien til obstruksjonsbryteren. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a6679cbfe89e79b949816e4d500454ab8}\label{elevator_8h_a6679cbfe89e79b949816e4d500454ab8}} 
+\index{elevator.h@{elevator.h}!getStop@{getStop}}
+\index{getStop@{getStop}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{getStop()}{getStop()}}
+{\footnotesize\ttfamily int get\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer verdien til stoppknappen. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_abba2bdafe9118f76ddee19913552e3ee}\label{elevator_8h_abba2bdafe9118f76ddee19913552e3ee}} 
+\index{elevator.h@{elevator.h}!indicateFloor@{indicateFloor}}
+\index{indicateFloor@{indicateFloor}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{indicateFloor()}{indicateFloor()}}
+{\footnotesize\ttfamily void indicate\+Floor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Får etasjeindikatorerne til å lyse etter kravene. 
+
+
+
+Definition at line 42 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a0d8b4ee0eab7280001d1216cf66921a2}\label{elevator_8h_a0d8b4ee0eab7280001d1216cf66921a2}} 
+\index{elevator.h@{elevator.h}!initElevator@{initElevator}}
+\index{initElevator@{initElevator}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{initElevator()}{initElevator()}}
+{\footnotesize\ttfamily void init\+Elevator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialiserer heisen -\/ setter den i en definert etasje. 
+
+
+
+Definition at line 55 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_aa975651043f82b7547802f7826ba8289}\label{elevator_8h_aa975651043f82b7547802f7826ba8289}} 
+\index{elevator.h@{elevator.h}!setDoor@{setDoor}}
+\index{setDoor@{setDoor}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{setDoor()}{setDoor()}}
+{\footnotesize\ttfamily void set\+Door (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Setter verdien til lyset som inikerer om døren er åpen eller lukket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Verdi \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a188056060b98f2a5e726045194c04507}\label{elevator_8h_a188056060b98f2a5e726045194c04507}} 
+\index{elevator.h@{elevator.h}!setEmergency@{setEmergency}}
+\index{setEmergency@{setEmergency}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{setEmergency()}{setEmergency()}}
+{\footnotesize\ttfamily void set\+Emergency (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Setter verdien til emergency-\/variablen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Verdi \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a0122f48c41efd520e5e593fa6285e47f}\label{elevator_8h_a0122f48c41efd520e5e593fa6285e47f}} 
+\index{elevator.h@{elevator.h}!setLastFloor@{setLastFloor}}
+\index{setLastFloor@{setLastFloor}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{setLastFloor()}{setLastFloor()}}
+{\footnotesize\ttfamily void set\+Last\+Floor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Setter verdien til g\+\_\+last\+Floor-\/variablen. 
+
+
+
+Definition at line 20 of file elevator.\+c.
+
+\mbox{\Hypertarget{elevator_8h_a5c257097a6c346b22d0afce600c4219e}\label{elevator_8h_a5c257097a6c346b22d0afce600c4219e}} 
+\index{elevator.h@{elevator.h}!stopper@{stopper}}
+\index{stopper@{stopper}!elevator.h@{elevator.h}}
+\doxysubsubsection{\texorpdfstring{stopper()}{stopper()}}
+{\footnotesize\ttfamily void stopper (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definerer hvordan heisen skal respondere ved et nødstopp. 
+
+
+
+Definition at line 77 of file elevator.\+c.
+

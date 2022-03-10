@@ -25,7 +25,7 @@ typedef enum {
 } ButtonType;
 
 /**
- * @brief Initialiseringsfunksjon.
+ * @brief Initialiseringsfunksjo, kobler til serveren.
  * 
  */
 void elevio_init(void);
@@ -37,7 +37,7 @@ void elevio_init(void);
  */
 void elevio_motorDirection(MotorDirection dirn);
 /**
- * @brief Setter lyset på alle knappene gitt etasje, knappetype og verdi (0/1).
+ * @brief Setter lyset på knappene gitt etasje, knappetype og verdi (0/1).
  * 
  * @param floor Etajse
  * @param button Knappetype
@@ -64,11 +64,11 @@ void elevio_doorOpenLamp(int value);
 void elevio_stopLamp(int value);
 
 /**
- * @brief Returnerer etasjen som blir tilkalt uavhengig av knappetype, gitt knappetype og etasje.
+ * @brief Returnerer høy/lav til en knapp, gitt knappetype og etasje.
  * 
- * @param floor Etasje.
- * @param button Knappetype.
- * @return Etasje
+ * @param floor Etasje
+ * @param button Knappetype
+ * @return Verdi
  */
 int elevio_callButton(int floor, ButtonType button);
 /**

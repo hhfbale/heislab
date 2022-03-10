@@ -1,0 +1,245 @@
+\hypertarget{queue_8h}{}\doxysection{source/driver/queue.h File Reference}
+\label{queue_8h}\index{source/driver/queue.h@{source/driver/queue.h}}
+
+
+Inneholder funksjoner og variabler knyttet til køsystemet og prioriteringer.  
+
+
+{\ttfamily \#include \char`\"{}elevator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}elevio.\+h\char`\"{}}\newline
+Include dependency graph for queue.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{queue_8h_ab830df86ead8bd31ee4823fd169e0759}{get\+End\+Dest}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer endedestinasjonen som er satt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a4db2098f06f3570a931edfb2b6774dc2}{init\+Queue}} (void)
+\begin{DoxyCompactList}\small\item\em Initialiserer køen -\/ setter alle elementetne til 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a9632152b94cf0299e0a20f09d90e94d9}{print\+Queue}} (void)
+\begin{DoxyCompactList}\small\item\em Printer køen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_aa754b34b58b1747a63b03dc405df896a}{add\+To\+Queue}} (int b, int f)
+\begin{DoxyCompactList}\small\item\em Legger etasjer til køen gitt knappetype og etasje. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a11e29646da37637038df59d5dc920546}{remove\+From\+Queue}} (int b)
+\begin{DoxyCompactList}\small\item\em Fjerner etasjer fra køen gitt knappetyppe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a9473dec53f702816f4ab6c7ed9080447}{flush\+Queue}} (void)
+\begin{DoxyCompactList}\small\item\em Nullstiller køen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{queue_8h_a9b050079b510b68262ebe1f15055e074}{check\+Flush}} (void)
+\begin{DoxyCompactList}\small\item\em Sjekker om køen er nullstilt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_afd0f7244a38394070de6ad8dfdf95fc0}{update\+Queue}} (void)
+\begin{DoxyCompactList}\small\item\em Oppdaterer køen -\/ legger til og fjerner etasjer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_ae4e19ba4c1c79e07c73f08bfde9c8895}{check\+Floor\+UP}} (void)
+\begin{DoxyCompactList}\small\item\em Sjekker etasjer som eventuelt skal stoppes i når man kjører opp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a697e5a8568e85c6095be821b327837be}{check\+Floor\+D\+O\+WN}} (void)
+\begin{DoxyCompactList}\small\item\em Sjekker etasjer som eventuelt skal stoppes i når man kjører ned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a388337d846d33e596cfd60d13557dd58}{update\+End\+Dest}} (void)
+\begin{DoxyCompactList}\small\item\em Oppdaterer endedestinasjonen -\/ tar hensyn til knappeprioritet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a7c087e53f5474750ab1f645fb199d7dc}{set\+End\+Dest}} (int f)
+\begin{DoxyCompactList}\small\item\em Setter endedestinasjonen gitt etasje. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Inneholder funksjoner og variabler knyttet til køsystemet og prioriteringer. 
+
+\begin{DoxyAuthor}{Author}
+herman (\href{mailto:hhbale@stud.ntnu.no}{\texttt{ hhbale@stud.\+ntnu.\+no}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/03-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{queue_8h_aa754b34b58b1747a63b03dc405df896a}\label{queue_8h_aa754b34b58b1747a63b03dc405df896a}} 
+\index{queue.h@{queue.h}!addToQueue@{addToQueue}}
+\index{addToQueue@{addToQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{addToQueue()}{addToQueue()}}
+{\footnotesize\ttfamily void add\+To\+Queue (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Legger etasjer til køen gitt knappetype og etasje. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Knappetype \\
+\hline
+{\em f} & Etasje \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a697e5a8568e85c6095be821b327837be}\label{queue_8h_a697e5a8568e85c6095be821b327837be}} 
+\index{queue.h@{queue.h}!checkFloorDOWN@{checkFloorDOWN}}
+\index{checkFloorDOWN@{checkFloorDOWN}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{checkFloorDOWN()}{checkFloorDOWN()}}
+{\footnotesize\ttfamily void check\+Floor\+D\+O\+WN (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sjekker etasjer som eventuelt skal stoppes i når man kjører ned. 
+
+
+
+Definition at line 87 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_ae4e19ba4c1c79e07c73f08bfde9c8895}\label{queue_8h_ae4e19ba4c1c79e07c73f08bfde9c8895}} 
+\index{queue.h@{queue.h}!checkFloorUP@{checkFloorUP}}
+\index{checkFloorUP@{checkFloorUP}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{checkFloorUP()}{checkFloorUP()}}
+{\footnotesize\ttfamily void check\+Floor\+UP (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sjekker etasjer som eventuelt skal stoppes i når man kjører opp. 
+
+
+
+Definition at line 72 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a9b050079b510b68262ebe1f15055e074}\label{queue_8h_a9b050079b510b68262ebe1f15055e074}} 
+\index{queue.h@{queue.h}!checkFlush@{checkFlush}}
+\index{checkFlush@{checkFlush}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{checkFlush()}{checkFlush()}}
+{\footnotesize\ttfamily int check\+Flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sjekker om køen er nullstilt. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a9473dec53f702816f4ab6c7ed9080447}\label{queue_8h_a9473dec53f702816f4ab6c7ed9080447}} 
+\index{queue.h@{queue.h}!flushQueue@{flushQueue}}
+\index{flushQueue@{flushQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{flushQueue()}{flushQueue()}}
+{\footnotesize\ttfamily void flush\+Queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Nullstiller køen. 
+
+
+
+Definition at line 26 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_ab830df86ead8bd31ee4823fd169e0759}\label{queue_8h_ab830df86ead8bd31ee4823fd169e0759}} 
+\index{queue.h@{queue.h}!getEndDest@{getEndDest}}
+\index{getEndDest@{getEndDest}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{getEndDest()}{getEndDest()}}
+{\footnotesize\ttfamily int get\+End\+Dest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer endedestinasjonen som er satt. 
+
+\begin{DoxyReturn}{Returns}
+Endedestinasjonen 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a4db2098f06f3570a931edfb2b6774dc2}\label{queue_8h_a4db2098f06f3570a931edfb2b6774dc2}} 
+\index{queue.h@{queue.h}!initQueue@{initQueue}}
+\index{initQueue@{initQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{initQueue()}{initQueue()}}
+{\footnotesize\ttfamily void init\+Queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialiserer køen -\/ setter alle elementetne til 0. 
+
+
+
+Definition at line 7 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a9632152b94cf0299e0a20f09d90e94d9}\label{queue_8h_a9632152b94cf0299e0a20f09d90e94d9}} 
+\index{queue.h@{queue.h}!printQueue@{printQueue}}
+\index{printQueue@{printQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{printQueue()}{printQueue()}}
+{\footnotesize\ttfamily void print\+Queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Printer køen. 
+
+
+
+Definition at line 17 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a11e29646da37637038df59d5dc920546}\label{queue_8h_a11e29646da37637038df59d5dc920546}} 
+\index{queue.h@{queue.h}!removeFromQueue@{removeFromQueue}}
+\index{removeFromQueue@{removeFromQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{removeFromQueue()}{removeFromQueue()}}
+{\footnotesize\ttfamily void remove\+From\+Queue (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Fjerner etasjer fra køen gitt knappetyppe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Knappetype \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a7c087e53f5474750ab1f645fb199d7dc}\label{queue_8h_a7c087e53f5474750ab1f645fb199d7dc}} 
+\index{queue.h@{queue.h}!setEndDest@{setEndDest}}
+\index{setEndDest@{setEndDest}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{setEndDest()}{setEndDest()}}
+{\footnotesize\ttfamily void set\+End\+Dest (\begin{DoxyParamCaption}\item[{int}]{f }\end{DoxyParamCaption})}
+
+
+
+Setter endedestinasjonen gitt etasje. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Etasje \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a388337d846d33e596cfd60d13557dd58}\label{queue_8h_a388337d846d33e596cfd60d13557dd58}} 
+\index{queue.h@{queue.h}!updateEndDest@{updateEndDest}}
+\index{updateEndDest@{updateEndDest}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{updateEndDest()}{updateEndDest()}}
+{\footnotesize\ttfamily void update\+End\+Dest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Oppdaterer endedestinasjonen -\/ tar hensyn til knappeprioritet. 
+
+
+
+Definition at line 106 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_afd0f7244a38394070de6ad8dfdf95fc0}\label{queue_8h_afd0f7244a38394070de6ad8dfdf95fc0}} 
+\index{queue.h@{queue.h}!updateQueue@{updateQueue}}
+\index{updateQueue@{updateQueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{updateQueue()}{updateQueue()}}
+{\footnotesize\ttfamily void update\+Queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Oppdaterer køen -\/ legger til og fjerner etasjer. 
+
+
+
+Definition at line 62 of file queue.\+c.
+

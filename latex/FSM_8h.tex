@@ -1,0 +1,132 @@
+\hypertarget{FSM_8h}{}\doxysection{source/driver/\+F\+SM.h File Reference}
+\label{FSM_8h}\index{source/driver/FSM.h@{source/driver/FSM.h}}
+
+
+Tilstandsmaskinen til heisen.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{FSM_8h_a275a67132f10277ada3a0ee3d616b647}\label{FSM_8h_a275a67132f10277ada3a0ee3d616b647}} 
+enum {\bfseries S\+T\+A\+TE} \{ {\bfseries S\+T\+AT} = 0, 
+{\bfseries O\+P\+EN} = 1, 
+{\bfseries D\+O\+WN} = 2, 
+{\bfseries UP} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\+T\+A\+TE \mbox{\hyperlink{FSM_8h_a6ca7e54bb28e6fe68c46bf6fa8601d47}{get\+Last\+Moving\+Dir}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer retningen heisen sist kjørte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FSM_8h_a1128df897616cfb1cbfbe89fc227f1ac}{set\+Last\+Moving\+Dir}} (S\+T\+A\+TE s)
+\begin{DoxyCompactList}\small\item\em Setter verdien til variablen last\+Moving\+Dir. \end{DoxyCompactList}\item 
+S\+T\+A\+TE \mbox{\hyperlink{FSM_8h_a46d1acf948e6317fcaca3563675d818e}{get\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer tilstanden heisen er i. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FSM_8h_af9629a29a04f1ce9fffe68d8d61931bf}{set\+State}} (S\+T\+A\+TE s)
+\begin{DoxyCompactList}\small\item\em Setter verdien til tilstanden. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FSM_8h_ad0e765c3e600545cf6d6ca977281ec1f}{Finite\+State\+Machine}} (void)
+\begin{DoxyCompactList}\small\item\em Selve tilstandmaskinen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tilstandsmaskinen til heisen. 
+
+\begin{DoxyAuthor}{Author}
+herman (\href{mailto:hhbale@stud.ntnu.no}{\texttt{ hhbale@stud.\+ntnu.\+no}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/03-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{FSM_8h_ad0e765c3e600545cf6d6ca977281ec1f}\label{FSM_8h_ad0e765c3e600545cf6d6ca977281ec1f}} 
+\index{FSM.h@{FSM.h}!FiniteStateMachine@{FiniteStateMachine}}
+\index{FiniteStateMachine@{FiniteStateMachine}!FSM.h@{FSM.h}}
+\doxysubsubsection{\texorpdfstring{FiniteStateMachine()}{FiniteStateMachine()}}
+{\footnotesize\ttfamily void Finite\+State\+Machine (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Selve tilstandmaskinen. 
+
+
+
+Definition at line 23 of file F\+S\+M.\+c.
+
+\mbox{\Hypertarget{FSM_8h_a6ca7e54bb28e6fe68c46bf6fa8601d47}\label{FSM_8h_a6ca7e54bb28e6fe68c46bf6fa8601d47}} 
+\index{FSM.h@{FSM.h}!getLastMovingDir@{getLastMovingDir}}
+\index{getLastMovingDir@{getLastMovingDir}!FSM.h@{FSM.h}}
+\doxysubsubsection{\texorpdfstring{getLastMovingDir()}{getLastMovingDir()}}
+{\footnotesize\ttfamily S\+T\+A\+TE get\+Last\+Moving\+Dir (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer retningen heisen sist kjørte. 
+
+\begin{DoxyReturn}{Returns}
+Retning 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file F\+S\+M.\+c.
+
+\mbox{\Hypertarget{FSM_8h_a46d1acf948e6317fcaca3563675d818e}\label{FSM_8h_a46d1acf948e6317fcaca3563675d818e}} 
+\index{FSM.h@{FSM.h}!getState@{getState}}
+\index{getState@{getState}!FSM.h@{FSM.h}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily S\+T\+A\+TE get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer tilstanden heisen er i. 
+
+\begin{DoxyReturn}{Returns}
+Tilstand 
+\end{DoxyReturn}
+
+
+Definition at line 7 of file F\+S\+M.\+c.
+
+\mbox{\Hypertarget{FSM_8h_a1128df897616cfb1cbfbe89fc227f1ac}\label{FSM_8h_a1128df897616cfb1cbfbe89fc227f1ac}} 
+\index{FSM.h@{FSM.h}!setLastMovingDir@{setLastMovingDir}}
+\index{setLastMovingDir@{setLastMovingDir}!FSM.h@{FSM.h}}
+\doxysubsubsection{\texorpdfstring{setLastMovingDir()}{setLastMovingDir()}}
+{\footnotesize\ttfamily void set\+Last\+Moving\+Dir (\begin{DoxyParamCaption}\item[{S\+T\+A\+TE}]{s }\end{DoxyParamCaption})}
+
+
+
+Setter verdien til variablen last\+Moving\+Dir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Retining \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file F\+S\+M.\+c.
+
+\mbox{\Hypertarget{FSM_8h_af9629a29a04f1ce9fffe68d8d61931bf}\label{FSM_8h_af9629a29a04f1ce9fffe68d8d61931bf}} 
+\index{FSM.h@{FSM.h}!setState@{setState}}
+\index{setState@{setState}!FSM.h@{FSM.h}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{S\+T\+A\+TE}]{s }\end{DoxyParamCaption})}
+
+
+
+Setter verdien til tilstanden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Tilstand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file F\+S\+M.\+c.
+

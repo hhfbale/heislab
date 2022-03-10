@@ -1,7 +1,7 @@
 /**
  * @file FSM.h
  * @author herman (hhbale@stud.ntnu.no)
- * @brief Utlevert kode, funksjoner som innhenter og sender informasjon til fysisk heis.
+ * @brief Tilstandsmaskinen til heisen.
  * @date 2022-03-06
  */
 #pragma once
@@ -50,7 +50,7 @@ STATE getState(void);
 void setState(STATE s);
 
 /**
- * @brief Selve tilstandmaskinen. Switch-case som stadig kjører i en whileløkke, hvor casene er tilstandene til heisen.
+ * @brief Selve tilstandmaskinen.
  * 
  */
 void FiniteStateMachine(void);

@@ -1,7 +1,7 @@
 /**
  * @file tid.h
  * @author herman (hhbale@stud.ntnu.no)
- * @brief Utlevert kode, funksjoner som innhenter og sender informasjon til fysisk heis.
+ * @brief Inneholder funksjoner knyttet til tidtakning.
  * @date 2022-03-06
  */
 #pragma once
@@ -19,7 +19,7 @@ void startCounter(void);
  */
 int stopCounter(void);
 /**
- * @brief Funksjonen som teller til tre sekunder. fungerer som en forsinkelse.
+ * @brief Funksjonen som teller til tre sekunder. Fungerer som en forsinkelse.
  * 
  */
 void timer(void);

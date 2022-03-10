@@ -1,0 +1,80 @@
+\hypertarget{tid_8h}{}\doxysection{source/driver/tid.h File Reference}
+\label{tid_8h}\index{source/driver/tid.h@{source/driver/tid.h}}
+
+
+Inneholder funksjoner knyttet til tidtakning.  
+
+
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for tid.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tid_8h_a85527e63f93bba507c8379c80221fa7b}{start\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Nullstiller startverdien som brukes i funksjonen \mbox{\hyperlink{tid_8h_a3b03ac239abd256a7c8593b893b460c4}{stop\+Counter()}} for å telle sekunder. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tid_8h_a3b03ac239abd256a7c8593b893b460c4}{stop\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Returnerer 1 hvis det er gått 3 sekunder siden den ble kalt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tid_8h_a24a6870c2b654380f81daf45ffd46c93}{timer}} (void)
+\begin{DoxyCompactList}\small\item\em Funksjonen som teller til tre sekunder. Fungerer som en forsinkelse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Inneholder funksjoner knyttet til tidtakning. 
+
+\begin{DoxyAuthor}{Author}
+herman (\href{mailto:hhbale@stud.ntnu.no}{\texttt{ hhbale@stud.\+ntnu.\+no}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/03-\/06 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tid_8h_a85527e63f93bba507c8379c80221fa7b}\label{tid_8h_a85527e63f93bba507c8379c80221fa7b}} 
+\index{tid.h@{tid.h}!startCounter@{startCounter}}
+\index{startCounter@{startCounter}!tid.h@{tid.h}}
+\doxysubsubsection{\texorpdfstring{startCounter()}{startCounter()}}
+{\footnotesize\ttfamily void start\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Nullstiller startverdien som brukes i funksjonen \mbox{\hyperlink{tid_8h_a3b03ac239abd256a7c8593b893b460c4}{stop\+Counter()}} for å telle sekunder. 
+
+
+
+Definition at line 10 of file tid.\+c.
+
+\mbox{\Hypertarget{tid_8h_a3b03ac239abd256a7c8593b893b460c4}\label{tid_8h_a3b03ac239abd256a7c8593b893b460c4}} 
+\index{tid.h@{tid.h}!stopCounter@{stopCounter}}
+\index{stopCounter@{stopCounter}!tid.h@{tid.h}}
+\doxysubsubsection{\texorpdfstring{stopCounter()}{stopCounter()}}
+{\footnotesize\ttfamily int stop\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returnerer 1 hvis det er gått 3 sekunder siden den ble kalt. 
+
+\begin{DoxyReturn}{Returns}
+Verdi 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file tid.\+c.
+
+\mbox{\Hypertarget{tid_8h_a24a6870c2b654380f81daf45ffd46c93}\label{tid_8h_a24a6870c2b654380f81daf45ffd46c93}} 
+\index{tid.h@{tid.h}!timer@{timer}}
+\index{timer@{timer}!tid.h@{tid.h}}
+\doxysubsubsection{\texorpdfstring{timer()}{timer()}}
+{\footnotesize\ttfamily void timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funksjonen som teller til tre sekunder. Fungerer som en forsinkelse. 
+
+
+
+Definition at line 23 of file tid.\+c.
+

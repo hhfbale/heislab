@@ -1,7 +1,7 @@
 /**
  * @file queue.h
  * @author herman (hhbale@stud.ntnu.no)
- * @brief Utlevert kode, funksjoner som innhenter og sender informasjon til fysisk heis.
+ * @brief Inneholder funksjoner og variabler knyttet til køsystemet og prioriteringer.
  * @date 2022-03-06
  */
 #pragma once
@@ -40,14 +40,14 @@ void printQueue(void);
 
 
 /**
- * @brief Legger etasjer til køen gitt knappetype (for å sette lyset på knappen) og etasje.
+ * @brief Legger etasjer til køen gitt knappetype og etasje.
  * 
  * @param b Knappetype
  * @param f Etasje
  */
 void addToQueue(int b, int f);
 /**
- * @brief Fjerner etasjer fra køen gitt knappetyppe (for å slukke lyset på knappen).
+ * @brief Fjerner etasjer fra køen gitt knappetyppe.
  * 
  * @param b Knappetype
  */
