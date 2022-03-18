@@ -45,13 +45,11 @@ void indicateFloor(void){
     }
 }
 
-//testet
 void setDoor(int value){
     elevio_doorOpenLamp(value);
     g_doorOpen = value;
 }
 
-//testet
 void initElevator(void){
     setDoor(0);
     elevio_motorDirection(DIRN_DOWN);
@@ -62,18 +60,12 @@ void initElevator(void){
     setState(STAT);
 }
 
-//testet
 void embark(void){
     elevio_motorDirection(DIRN_STOP);
     setState(STAT);
     setDoor(1);
 }
 
-
-
-
-
-//testet
 void stopper(void){
     elevio_motorDirection(DIRN_STOP);
     flushQueue();
